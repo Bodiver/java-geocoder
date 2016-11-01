@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class GeocoderResult {
 
+    //Model to convert geocoder response
     @SerializedName("results")
     @Expose
     private List<Result> results = new ArrayList<Result>();

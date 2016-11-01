@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         List<String> cities = getCitiesFromFile();
+        //For each address send request for coordinates
         for (String city : cities) {
             RequestMaker.getCoordinatesFor(city);
         }
@@ -23,8 +24,10 @@ public class Main {
         ArrayList<String> rows = new ArrayList<String>();
 
         try {
+            //Obtain .txt file from resources folder
             file = new File(classLoader.getResource("cities").getFile());
             s = new Scanner(file);
+            //Getting each text row from file using Scanner
             while (s.hasNext()) {
                 rows.add(s.next());
             }
